@@ -1,79 +1,13 @@
 <div class="topstr">
     <div class="container">
-        <div class="col-md-6 topstr-left">
+        <div class="col-md-6 topstr-left" data-ng-repeat="piece in pieces">
             <div class="tp-lt">
                 <div class="top-lft">
-                    <img src="../../static/images/g3.jpg" alt=" " class="img-responsive">
+                    <img src="{{ piece.fields.image_cover }}" alt=" " class="img-responsive">
                 </div>
                 <div class="top-rgt">
-                    <h4>Ipsum available</h4>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                        alteration</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <div class="col-md-6 topstr-left">
-            <div class="tp-lt">
-                <div class="top-lft">
-                    <img src="../../static/images/g4.jpg" alt=" " class="img-responsive">
-                </div>
-                <div class="top-rgt">
-                    <h4>Many variations of</h4>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                        alteration</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <div class="col-md-6 topstr-left">
-            <div class="tp-lt">
-                <div class="top-lft">
-                    <img src="../../static/images/g5.jpg" alt=" " class="img-responsive">
-                </div>
-                <div class="top-rgt">
-                    <h4>Variations of passage</h4>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                        alteration</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <div class="col-md-6 topstr-left">
-            <div class="tp-lt">
-                <div class="top-lft">
-                    <img src="../../static/images/g2.jpg" alt=" " class="img-responsive">
-                </div>
-                <div class="top-rgt">
-                    <h4>The majority have </h4>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                        alteration</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <div class="col-md-6 topstr-left">
-            <div class="tp-lt">
-                <div class="top-lft">
-                    <img src="../../static/images/g7.jpg" alt=" " class="img-responsive">
-                </div>
-                <div class="top-rgt">
-                    <h4>Passages of Lorem</h4>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                        alteration</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <div class="col-md-6 topstr-left">
-            <div class="tp-lt">
-                <div class="top-lft">
-                    <img src="../../static/images/g8.jpg" alt=" " class="img-responsive">
-                </div>
-                <div class="top-rgt">
-                    <h4>Suffered alteration</h4>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                        alteration</p>
+                    <h4>{{ piece.fields.name }}</h4>
+                    <p><b>Duration: </b>{{ piece.fields.duration }}</p>
                 </div>
                 <div class="clearfix"></div>
             </div>

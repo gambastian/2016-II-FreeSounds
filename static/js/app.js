@@ -12,6 +12,7 @@
     var Configuration = function ($routeProvider, $compileProvider, $locationProvider, $httpProvider) {
         $routeProvider.when('/pieces', {
             templateUrl: 'static/partials/pieces.html',
+            controller: 'PiecesCrtl'
         }).when('/about', {
             templateUrl: 'static/partials/about.html',
         }).otherwise({
