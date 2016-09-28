@@ -3,7 +3,7 @@
         <div class="col-md-6 topstr-left" data-ng-repeat="piece in pieces">
             <div class="tp-lt">
                 <div class="top-lft">
-                    <img src="{{ piece.fields.image_cover }}" alt=" " class="img-responsive">
+                    <a href="#/pieces/{{ piece.pk }}"><img src="{{ piece.fields.image_cover }}" alt=" " class="img-responsive"></a>
                 </div>
                 <div class="top-rgt">
                     <h4>{{ piece.fields.name }}</h4>

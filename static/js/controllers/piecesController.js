@@ -13,6 +13,8 @@
             console.log('Error: ' + response);
         })
 
+
+
     };
 
     angular.module('freesounds.controllers').controller('PiecesCrtl', ['$rootScope', '$scope', '$location', 'piecesService', PiecesCrtl]);
