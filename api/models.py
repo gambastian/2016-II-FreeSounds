@@ -16,4 +16,5 @@ class Piece(models.Model):
     duration = models.IntegerField(null=False)
     category = models.ForeignKey(Category, null=True, blank=True)
     artist = models.ForeignKey(Artist, null=True)
+    lyrics = models.TextField(null=True, blank=True)
 

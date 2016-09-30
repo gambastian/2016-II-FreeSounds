@@ -19,6 +19,10 @@
         }).when('/pieces/:piece_id', {
             templateUrl: 'static/partials/detail.html',
             controller: 'PieceDetailCrtl'
+        }).when('/pieces/:piece_id/edit', {
+            templateUrl: 'static/partials/editPiece.html',
+            controller: 'PieceDetailCrtl',
+            method: 'editPiece'
         }).otherwise({
             redirectTo: '/pieces'
         });
