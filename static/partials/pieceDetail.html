@@ -3,20 +3,17 @@
         <div class="col-md-9 events-left">
             <div class="eve-top">
                 <div class="col-md-5 eve-lt">
-                    <div class="ev-lft">
+                    <div style="width: 330px;height: 330px" >
                         <img src="{{ piece.fields.image_cover }}" alt=" " class="img-responsive">
-                    </div>
-                    <div class="ev-rgt">
-                            <span class="glyphicon glyphicon-play"></span>
                     </div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="col-md-7 eve-rt">
-                    <h4>Variations of passages</h4>
-                    <p>There are many variations of passages Slightly believable of Lorem Ipsum available, but the
-                        majority
-                        have
-                        suffered alteration</p>
+                    <h4>{{ piece.fields.name }}</h4>
+                    <p><b>Duration: </b> {{ piece.fields.duration }}</p>
+                    <div class="ev-rgt">
+                        <img src="http://square-squared.com/Images/play-button1.png" alt=" " class="img-responsive">
+                    </div>
                 </div>
                 <div class="clearfix"></div>
             </div>

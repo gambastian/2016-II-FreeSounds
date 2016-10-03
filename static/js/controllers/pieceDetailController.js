@@ -4,20 +4,13 @@
 (function () {
     'use strict';
 
-    var PieceDetailCrtl = function ($rootScope, $scope, $location, piecesService) {
+    var PieceDetailCrtl = function ($rootScope, $scope, $location, $routeParams, piecesService) {
 
-        var res = piecesService.list().then(function (data) {
-            $scope.pieces = data;
-        }, function (response) {
-            $scope.error = true;
-            console.log('Error: ' + response);
+        piecesService.query($routeParams.piece_id).then(function (response) {
+            $scope.piece = response[0];
         })
-
-        $scope.viewDetail = function (piece_id) {
-            $location.url('/pieces/' + piece_id);
-        }
 
     };
 
-    angular.module('freesounds.controllers').controller('PieceDetailCrtl', ['$rootScope', '$scope', '$location', 'piecesService', PieceDetailCrtl]);
+    angular.module('freesounds.controllers').controller('PieceDetailCrtl', ['$rootScope', '$scope', '$location', '$routeParams', 'piecesService', PieceDetailCrtl]);
 }());

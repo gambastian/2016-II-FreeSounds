@@ -13,6 +13,13 @@
                         return response.data;
                     });
                 return promise;
+            },
+            query: function (piece_id) {
+                var promise = $http.get('/api/pieces/' + piece_id, {})
+                    .then(function (response) {
+                        return response.data;
+                    });
+                return promise;
             }
         };
 
