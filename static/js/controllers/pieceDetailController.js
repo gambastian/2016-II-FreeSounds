@@ -4,7 +4,7 @@
 (function () {
     'use strict';
 
-    var PiecesCrtl = function ($rootScope, $scope, $location, piecesService) {
+    var PieceDetailCrtl = function ($rootScope, $scope, $location, piecesService) {
 
         var res = piecesService.list().then(function (data) {
             $scope.pieces = data;
@@ -19,5 +19,5 @@
 
     };
 
-    angular.module('freesounds.controllers').controller('PiecesCrtl', ['$rootScope', '$scope', '$location', 'piecesService', PiecesCrtl]);
+    angular.module('freesounds.controllers').controller('PieceDetailCrtl', ['$rootScope', '$scope', '$location', 'piecesService', PieceDetailCrtl]);
 }());
