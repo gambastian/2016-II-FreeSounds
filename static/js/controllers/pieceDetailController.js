@@ -27,6 +27,7 @@
         $scope.saveLyrics = function (lyrics) {
             console.log(lyrics);
         };
+        
     };
 
     angular.module('freesounds.controllers').controller('PieceDetailCrtl', ['$rootScope', '$scope', '$location', '$routeParams', 'piecesService', PieceDetailCrtl]);
