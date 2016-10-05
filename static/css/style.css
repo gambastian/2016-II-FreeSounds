@@ -19,6 +19,11 @@ body a,.grid_1,plan_1,plan_1.one,plan_1.two,i.icon1, i.icon2, i.icon3, i.icon4, 
 a:hover{
  text-decoration:none;
 }
+.register-form{
+    width: 60%;
+    margin: 0 auto;
+    color:#fff;
+}
 input[type="button"],input[type="submit"],li.parallelogram{
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -570,7 +575,7 @@ ul.f-icons{
 .galler-top {
   background-color: #F4E24D;
 }
-.events h3 ,.about h3,.contact h3{
+.events h3 ,.about h3,.contact , .register h3{
   color: #FEF356;
   font-size: 1.7em;
   font-weight: 700;

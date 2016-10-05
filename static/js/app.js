@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    var freesounds = angular.module('freesounds', ['ngCookies', 'ngRoute', 'ngResource', 'freesounds.controllers', 'freesounds.services']);
+    var freesounds = angular.module('freesounds', ['ngCookies', 'ngRoute', 'ngResource', 'ngMessages', 'freesounds.controllers', 'freesounds.services']);
     var freesoundsControllers = angular.module('freesounds.controllers', []);
     var freesoundsServices = angular.module('freesounds.services', []);
 
@@ -15,6 +15,9 @@
             controller: 'PiecesCrtl'
         }).when('/about', {
             templateUrl: 'static/partials/about.html',
+        }).when('/createArtist', {
+            templateUrl: 'static/partials/createArtist.html',
+            controller: 'ArtistCrtl'
         }).otherwise({
             redirectTo: '/pieces'
         });
