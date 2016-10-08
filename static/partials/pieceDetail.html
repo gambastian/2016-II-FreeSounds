@@ -23,18 +23,21 @@
                                              ng-click="toggleLyricsInput()">Add lyrics</span></a>
                         </h2>
                         <h2 ng-if="hasLyrics">
-                            <a href=""><span class="label label-default">View lyrics</span></a>
+                            <a href=""><span class="label label-default"
+                                             ng-click="toggleViewLyrics()">View lyrics</span></a>
                         </h2>
                     </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
+            <!-- Add lyrics -->
             <div class="eve-top" ng-if="viewLyricsInput">
                 <div class="col-md-5"></div>
                 <div class="col-md-7">
-                    <textarea rows="10" style="width: 100%" ng-model="lyrics"></textarea>
+                    <label ng-if="lyricsError" style="color: #ff0">{{ lyricsErrorMessage }}</label>
+                    <textarea rows="10" style="width: 100%" ng-model="piece.fields.lyrics"></textarea>
                     <div style="text-align: right">
-                        <label style="font-size: 200%" ng-click="saveLyrics(lyrics)">
+                        <label style="font-size: 200%" ng-click="saveLyrics(piece)">
                             <a href=""><span class="label label-default">Save</span></a>
                         </label>
                         <label style="font-size: 200%" ng-click="discardLyrics()">
@@ -43,6 +46,15 @@
                             </a>
                         </label>
                     </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <!-- View lyrics -->
+            <div class="eve-top" ng-if="viewLyrics">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <p>{{ piece.fields.lyrics }}</p>
                 </div>
                 <div class="clearfix"></div>
             </div>
