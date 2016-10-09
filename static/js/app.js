@@ -15,6 +15,12 @@
             controller: 'PiecesCrtl'
         }).when('/about', {
             templateUrl: 'static/partials/about.html',
+        }).when('/createCollections', {
+            templateUrl: 'static/partials/createCollection.html',
+            controller: 'CollectionController'
+        }).when('/collectionsList', {
+            templateUrl: 'static/partials/collectionList.html',
+            controller: 'CollectionController'
         }).otherwise({
             redirectTo: '/pieces'
         });

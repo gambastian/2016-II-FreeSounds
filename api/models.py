@@ -17,3 +17,7 @@ class Piece(models.Model):
     category = models.ForeignKey(Category, null=True, blank=True)
     artist = models.ForeignKey(Artist, null=True)
 
+class Collection(models.Model):
+    name = models.CharField(max_length=60)
+
+

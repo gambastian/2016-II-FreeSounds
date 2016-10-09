@@ -44,6 +44,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <ul>
                                 <li><a class="active" href="#/pieces">Home</a></li>
                                 <li><a href="#/about">About</a></li>
+                                {#  <li><a href="#/collectionsList">Colections</a></li>#}
+                                <li><a href="#/createCollections">Create a Colection</a></li>
                                 {#					<li><a href="events.html">Events</a></li>#}
                                 {#					<li><a href="gallery.html">Gallery</a></li>#}
                                 {#					<li><a href="blog.html">Blog</a></li>#}
@@ -138,8 +140,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{% static "js/app.js" %}"></script>
 <!-- Controllers -->
 <script src="{% static "js/controllers/piecesController.js" %}"></script>
+<script src="{% static "js/controllers/CollectionController.js" %}"></script>
 <!-- Services -->
 <script src="{% static "js/services/piecesService.js" %}"></script>
+<script src="{% static "js/services/CollectionService.js" %}"></script>
 <!-- Other -->
 <script src="{% static "js/csrfToken.js" %}"></script>
 
