@@ -13,6 +13,10 @@
             console.log('Error: ' + response);
         })
 
+        $scope.viewDetail = function (piece_id) {
+            $location.url('/pieces/' + piece_id);
+        }
+
     };
 
     angular.module('freesounds.controllers').controller('PiecesCrtl', ['$rootScope', '$scope', '$location', 'piecesService', PiecesCrtl]);

@@ -15,6 +15,9 @@
             controller: 'PiecesCrtl'
         }).when('/about', {
             templateUrl: 'static/partials/about.html',
+        }).when('/pieces/:piece_id', {
+            templateUrl: 'static/partials/pieceDetail.html',
+            controller: 'PieceDetailCrtl'
         }).otherwise({
             redirectTo: '/pieces'
         });
