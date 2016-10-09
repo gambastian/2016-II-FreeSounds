@@ -3,10 +3,10 @@ import json
 from django.core import serializers
 from django.http import HttpResponse
 from django.http import JsonResponse
-from django.shortcuts import get_list_or_404
+from django.shortcuts import get_list_or_404, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 
-from api.models import Piece
+from api.models import Piece, Category
 
 
 ###########################################
@@ -37,7 +37,6 @@ def update_piece(request):
             image_cover = jsonPiece['body']['fields']['image_cover']
             duration = jsonPiece['body']['fields']['duration']
             category = jsonPiece['body']['fields']['category']
-            artist = jsonPiece['body']['fields']['artist']
             lyrics = jsonPiece['body']['fields']['lyrics']
 
             selected_piece = pieces[0]
@@ -51,9 +50,8 @@ def update_piece(request):
             if duration is not None:
                 selected_piece.duration = duration
             if category is not None:
-                selected_piece.category = category
-            if artist is not None:
-                selected_piece.artist = artist
+                cat = get_object_or_404(Category, pk = category)
+                selected_piece.category = cat
             if lyrics is not None:
                 selected_piece.lyrics = lyrics
 
