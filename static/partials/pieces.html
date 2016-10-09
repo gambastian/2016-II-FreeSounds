@@ -3,10 +3,12 @@
         <div class="col-md-6 topstr-left" data-ng-repeat="piece in pieces">
             <div class="tp-lt">
                 <div class="top-lft">
-                    <img src="{{ piece.fields.image_cover }}" alt=" " class="img-responsive">
+                    <a href="" ng-click="viewDetail(piece.pk)">
+                        <img src="{{ piece.fields.image_cover }}" alt=" " class="img-responsive">
+                    </a>
                 </div>
                 <div class="top-rgt">
-                    <h4>{{ piece.fields.name }}</h4>
+                    <a href="" ng-click="viewDetail(piece.pk)"><h4>{{ piece.fields.name }}</h4></a>
                     <p><b>Duration: </b>{{ piece.fields.duration }}</p>
                 </div>
                 <div class="clearfix"></div>
