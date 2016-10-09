@@ -8,6 +8,7 @@
                     </div>
                     <div class="clearfix"></div>
                 </div>
+
                 <div class="col-md-7 container">
                     <h4>{{ piece.fields.name }}</h4>
                     <p><b>Duration: </b> {{ piece.fields.duration }}</p>
@@ -18,15 +19,72 @@
                     <br>
                     <br>
                     <div>
-                        <h2 ng-if="!hasLyrics">
-                            <a href=""><span class="label label-default"
-                                             ng-click="toggleLyricsInput()">Add lyrics</span></a>
-                        </h2>
-                        <h2 ng-if="hasLyrics">
-                            <a href=""><span class="label label-default"
-                                             ng-click="toggleViewLyrics()">View lyrics</span></a>
-                        </h2>
+                        <div style="float:right;position:relative;"><h2><a href=""><span class="label label-default"
+                                                                                         ng-click="togglePieceInput()">Edit Piece</span></a></h2>
+                        </div>
+                        <div style="float:right;position:relative;">
+                            <h2 ng-if="!hasLyrics">
+                                <a href=""><span class="label label-default"
+                                                 ng-click="toggleLyricsInput()">Add lyrics</span></a>
+                            </h2>
+                            <h2 ng-if="hasLyrics">
+                                <a href=""><span class="label label-default"
+                                                 ng-click="toggleViewLyrics()">View lyrics</span></a>
+                            </h2>
+                        </div>
                     </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Edit Piece -->
+            <div class="eve-top" ng-if="viewPieceInput">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <label ng-if="lyricsError" style="color: #ff0">
+                                    {{ lyricsErrorMessage }}
+                                </label>
+                                <label ng-if="nameError" style="color: #ff0">
+                                    {{ nameErrorMessage }}
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    Name
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" style="width: 100%" ng-model="piece.fields.name"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    Category
+                                </label>
+                            </td>
+                            <td>
+                                <select id="sel" class="input-block-level" ng-model="piece.fields.category" ng-options="obj.pk as obj.fields.name for obj in categories">
+                                </select>
+                            </td>
+                        </tr>
+                        <tr><td><label>Lyric</label></td><td><textarea rows="10" style="width: 100%" ng-model="piece.fields.lyrics"></textarea></td></tr>
+                        <tr><td>
+                            <label style="font-size: 200%" ng-click="savePiece(piece)">
+                                <a href=""><span class="label label-default">Save</span></a>
+                            </label>
+                        </td><td>
+                            <label style="font-size: 200%" ng-click="discardPiece()">
+                                <a href="">
+                                    <span class="label label-block label-default">Cancel</span>
+                                </a>
+                            </label>
+                        </td></tr>
+                    </table>
                 </div>
                 <div class="clearfix"></div>
             </div>

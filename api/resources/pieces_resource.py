@@ -8,7 +8,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 from api.models import Piece, Category
 
-
 ###########################################
 # Resource for operations with Piece class
 ###########################################
@@ -58,3 +57,4 @@ def update_piece(request):
             selected_piece.save()
 
             return JsonResponse({"mensaje": "successfully updated"})
+
