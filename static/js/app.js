@@ -10,19 +10,14 @@
     var freesoundsServices = angular.module('freesounds.services', []);
 
     var Configuration = function ($routeProvider, $compileProvider, $locationProvider, $httpProvider) {
-
         $routeProvider.when('/pieces', {
             templateUrl: 'static/partials/pieces.html',
             controller: 'PiecesCrtl'
         }).when('/about', {
             templateUrl: 'static/partials/about.html',
         }).when('/pieces/:piece_id', {
-            templateUrl: 'static/partials/detail.html',
+            templateUrl: 'static/partials/pieceDetail.html',
             controller: 'PieceDetailCrtl'
-        }).when('/pieces/:piece_id/edit', {
-            templateUrl: 'static/partials/editPiece.html',
-            controller: 'PieceDetailCrtl',
-            method: 'editPiece'
         }).otherwise({
             redirectTo: '/pieces'
         });

@@ -13,7 +13,9 @@
             console.log('Error: ' + response);
         })
 
-
+        $scope.viewDetail = function (piece_id) {
+            $location.url('/pieces/' + piece_id);
+        }
 
     };
 

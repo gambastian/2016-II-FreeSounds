@@ -15,6 +15,6 @@ class Piece(models.Model):
     image_cover = models.CharField(max_length=100)
     duration = models.IntegerField(null=False)
     category = models.ForeignKey(Category, null=True, blank=True)
-    artist = models.ForeignKey(Artist, null=True)
-    lyrics = models.TextField(null=True, blank=True)
+    artist = models.ForeignKey(Artist, null=True, blank=True)
+    lyrics = models.TextField(blank=True, null=True)
 
