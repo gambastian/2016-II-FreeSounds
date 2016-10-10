@@ -4,14 +4,14 @@
 (function() {
         'use strict';
 
-        var CollectionSrv = function ($resource, $http) {
+        var CollectionSrv = function ($http) {
             var createCollectionService={
                 create: function (data) {
                     var heads = {
                         'X-Requested-With': 'XMLHttpRequest',
                         'Content-Type': 'application/x-www-form-urlencoded' //Revisar esto, no creo que toque enviarlo encriptado!!!!!!!!!!!!!!
                     };
-                    var promise = $http.post('/api//collectionsList',
+                    var promise = $http.post('/api/createCollections',
                         {
                             headers: heads,
                             body: data
@@ -25,6 +25,6 @@
         };
         return createCollectionService;
         }
-        angular.module('freesounds.services').factory('CollectionService', ['$http', CollectionSrv]);
+        angular.module('freesounds.services').factory('createCollectionService', ['$http', CollectionSrv]);
     }()
 );
