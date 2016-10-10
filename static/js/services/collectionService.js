@@ -4,8 +4,8 @@
 (function() {
         'use strict';
 
-        var CollectionSrv = function ($http) {
-            var createCollectionService={
+        var collectionSrv = function ($http) {
+            var CreateCollectionService={
                 create: function (data) {
                     var heads = {
                         'X-Requested-With': 'XMLHttpRequest',
@@ -23,8 +23,8 @@
                     return promise;
                 }
         };
-        return createCollectionService;
+        return CreateCollectionService;
         }
-        angular.module('freesounds.services').factory('createCollectionService', ['$http', CollectionSrv]);
+        angular.module('freesounds.services').service('collectionService', ['$http', collectionSrv]);
     }()
 );

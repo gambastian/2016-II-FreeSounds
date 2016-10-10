@@ -17,10 +17,10 @@
             templateUrl: 'static/partials/about.html',
         }).when('/createCollections', {
             templateUrl: 'static/partials/createCollection.html',
-            controller: 'CollectionController'
+            controller: 'collectionController'
         }).when('/collectionsList', {
             templateUrl: 'static/partials/collectionList.html',
-            controller: 'CollectionController'
+            controller: 'collectionController'
         }).otherwise({
             redirectTo: '/pieces'
         });

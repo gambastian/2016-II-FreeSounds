@@ -1,5 +1,5 @@
 import json
-
+import sys
 
 from django.core import serializers
 from django.http import HttpResponseRedirect, HttpResponse
@@ -12,16 +12,18 @@ from api.models import Collection
 
 @csrf_exempt
 def create_collection(request):
+    print(request)
     if request.method == 'POST':
+        ##jsonUser = json.loads(request.body.decode('utf-8'))
         jsonUser = json.loads(request.body)
         pname = jsonUser['body']['name']
 
-    try:
-        collection = Collection.objects.create(name=pname)
-        if collection is not None:
-            mensaje = "ok"
-        else:
-            mensaje = "La coleccion no fue creada"
-        return JsonResponse({"mensaje": mensaje})
-    except ValueError as error:
-        return JsonResponse({"mensaje": "fallo la creacion"})
+        new_collection=Collection(name=pname);
+        new_collection.save();
+        ##collection = Collection.objects.create(name=pname)
+        ##if collection is not None:
+         ##   mensaje = "ok"
+        ##else:
+          ##  mensaje = "La coleccion no fue creada"
+        return HttpResponse(serializers.serialize("json", [new_collection]))
+

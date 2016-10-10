@@ -3,14 +3,13 @@
  */
 (function (){
     'use strict';
-console.log("Entro al controlador")
-    var CollectionController = function($rootScope, $scope, $location, collectionService)
+
+    var collectionController = function($rootScope, $scope, $location, collectionService)
         {
-console.log("Entro a la variable")
             $scope.create = function()
             {
                 console.log("Entro al scope")
-                var res = CollectionService.create($scope.form).then(function(data)
+                var res = collectionService.create($scope.form).then(function(data)
                     {
                         console.log("Entro a res")
                         console.log(JSON.stringify(data));
@@ -30,9 +29,6 @@ console.log("Entro a la variable")
                     }
                 )
             }
-
-console.log("Antes de puntoycoma")
         };
-        console.log("antes de modulo")
-    angular.module('freesounds.controllers').controller('CollectionController', ['$rootScope', '$scope', '$location', 'CollectionService', CollectionController]);
+    angular.module('freesounds.controllers').controller('collectionController', ['$rootScope', '$scope', '$location', 'collectionService', collectionController]);
     }());
