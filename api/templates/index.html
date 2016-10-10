@@ -138,11 +138,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- Controllers -->
 <script src="{% static "js/controllers/piecesController.js" %}"></script>
 <script src="{% static "js/controllers/pieceDetailController.js" %}"></script>
-<!-- Services -->
+<script src="{% static "js/controllers/addPieceController.js" %}"></script>
+
+    <!-- Services -->
 <script src="{% static "js/services/piecesService.js" %}"></script>
 <script src="{% static "js/services/categoryService.js" %}"></script>
+    <script src="{% static "js/services/S3UploadService.js" %}"></script>
+
 <!-- Other -->
 <script src="{% static "js/csrfToken.js" %}"></script>
+<script src="https://angular-file-upload.appspot.com/js/ng-file-upload.js"></script>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.48.min.js"></script>
 
 
 </body>

@@ -723,7 +723,26 @@ h3.ghj {
 	margin:0px 8px;
 }
 .contact-bottom input[type="text"] {
-	width: 32.6%;
+	width: 100%;
+	margin: 0px;
+	color: #D6D4D4;
+	background: none;
+	padding: 15px 10px;
+	outline: none;
+	border: 1px solid #BEBEBE;
+}
+
+.contact-bottom select{
+	width: 100%;
+	margin: 0px;
+	color: #D6D4D4;
+	background: none;
+	padding: 15px 10px;
+	outline: none;
+	border: 1px solid #BEBEBE;
+}
+.contact-bottom input[type="number"] {
+	width: 100%;
 	margin: 0px;
 	color: #D6D4D4;
 	background: none;
@@ -741,6 +760,32 @@ h3.ghj {
 	outline: none;
 	border: 1px solid #BEBEBE;
 	margin-top: 1.4%;
+}
+.contact-bottom button {
+	color: #B1AFAF;
+	padding: 10px 50px;
+	font-size: 20px;
+	font-weight: 700;
+	cursor: pointer;
+	font-weight: 700;
+	margin: 20px 0 0 0px;
+	border: 1px solid #BEBEBE;
+	background: none;
+	outline: none;
+	width: 100%;
+}
+.contact-bottom input[type=submit] {
+	color: #B1AFAF;
+	padding: 10px 50px;
+	font-size: 20px;
+	font-weight: 700;
+	cursor: pointer;
+	font-weight: 700;
+	margin: 20px 0 0 0px;
+	border: 1px solid #BEBEBE;
+	background: none;
+	outline: none;
+	width: 100%;
 }
 .submit-btn input[type=submit] {
 	color: #B1AFAF;
