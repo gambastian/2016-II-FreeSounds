@@ -9,9 +9,9 @@
                 create: function (data) {
                     var heads = {
                         'X-Requested-With': 'XMLHttpRequest',
-                        'Content-Type': 'application/x-www-form-urlencoded' //Revisar esto, no creo que toque enviarlo encriptado!!!!!!!!!!!!!!
+                        'Content-Type': 'application/x-www-form-urlencoded'
                     };
-                    var promise = $http.post('/api/createCollections',
+                    var promise = $http.post('/api/createCollections/',
                         {
                             headers: heads,
                             body: data

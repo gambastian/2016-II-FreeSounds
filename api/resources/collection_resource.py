@@ -14,10 +14,9 @@ from api.models import Collection
 def create_collection(request):
     print(request)
     if request.method == 'POST':
-        ##jsonUser = json.loads(request.body.decode('utf-8'))
+        ## jsonUser = json.loads(request.body.decode('utf-8'))
         jsonUser = json.loads(request.body)
         pname = jsonUser['body']['name']
-
         new_collection=Collection(name=pname);
         new_collection.save();
         ##collection = Collection.objects.create(name=pname)
