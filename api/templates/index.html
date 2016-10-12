@@ -17,12 +17,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"/>
     <script type="applijewelleryion/x-javascript">
          addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
-
     </script>
     <link href="../../static/css/bootstrap.css" rel='stylesheet' type='text/css'/>
     <!-- Custom Theme files -->
     <link href="../../static/css/style.css" rel='stylesheet' type='text/css'/>
-    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="{% static "lib/jquery.js" %}"></script>
     <!--webfonts-->
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700|Six+Caps'
           rel='stylesheet' type='text/css'>
@@ -47,6 +46,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 {#  <li><a href="#/collectionsList">Colections</a></li>#}
                                 <li><a href="#/createCollections/">Create a Colection</a></li>
                                 {#					<li><a href="events.html">Events</a></li>#}
+                                <li><a href="#/createArtist">Register</a></li>
+                                <li><a href="#/addPiece">Add Piece</a></li>
                                 {#					<li><a href="gallery.html">Gallery</a></li>#}
                                 {#					<li><a href="blog.html">Blog</a></li>#}
                                 {#					<li><a href="contact.html">Contact Us</a></li>#}
@@ -102,16 +103,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <div class="col-md-4 footer-left">
             <h3>More Info</h3>
-            <li><a href="#">How to order</a></li>
-            <li><a href="#">Faq</a></li>
-            <li><a href="#">Locatio</a></li>
-            <li><a href="#">Shipping</a></li>
-            <li><a href="#">Membership</a></li>
+            <li>01-8000-agile-republic</li>
         </div>
         <div class="col-md-4 footer-left">
             <h3>Contact Us</h3>
-            <p>Contrary to popular belief</p>
-            <p>The standard chunk</p>
+            <p>Yell loudly</p>
         </div>
         <div class="col-md-4 social">
             <h3>Follow Us</h3>
@@ -137,16 +133,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{% static "lib/angular/angular-route.min.js" %}"></script>
 <script src="{% static "lib/angular/angular-resource.min.js" %}"></script>
 <script src="{% static "lib/angular/angular-cookies.min.js" %}"></script>
+<script src="{% static "lib/angular/angular-messages.js" %}"></script>
 <script src="{% static "js/app.js" %}"></script>
 <!-- Controllers -->
 <script src="{% static "js/controllers/piecesController.js" %}"></script>
 <script src="{% static "js/controllers/collectionController.js" %}"></script>
+<script src="{% static "js/controllers/pieceDetailController.js" %}"></script>
+<script src="{% static "js/controllers/addPieceController.js" %}"></script>
+<script src="{% static "js/controllers/artistController.js" %}"></script>
 <!-- Services -->
+<script src="{% static "js/services/S3UploadService.js" %}"></script>
 <script src="{% static "js/services/piecesService.js" %}"></script>
 <script src="{% static "js/services/collectionService.js" %}"></script>
 <!-- Other -->
+<script src="{% static "js/services/categoryService.js" %}"></script>
+<script src="{% static "js/services/artistService.js" %}"></script>
 <script src="{% static "js/csrfToken.js" %}"></script>
-
+<script src="https://angular-file-upload.appspot.com/js/ng-file-upload.js"></script>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.48.min.js"></script>
 
 </body>
 </html>
