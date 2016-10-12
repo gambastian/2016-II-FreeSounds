@@ -24,7 +24,7 @@
                       cover: $rootScope.Locations[0].Location,
                       duration:$scope.newPiece.duration,
                       category:$scope.newPiece.category,
-                      artist:"prueba"
+                      artist:1
                         }
                         piecesService.add(data).then(function (result) {
                 // Mark as success
