@@ -1,5 +1,10 @@
 from django.conf.urls import url
 
+
+from api.resources.pieces_resource import pieces_list
+from api.resources.collection_resource import create_collection
+
+
 from api.resources.pieces_resource import pieces_list, piece_by_id, update_piece,add_piece
 from api.resources.category_resource import category_list
 from api.resources.awsS3_resource import getCredentials
@@ -13,5 +18,7 @@ urlpatterns=[
     url(r'^credentials/$', getCredentials, name='getCredentials'),
     url(r'^pieces/add_piece/$', add_piece, name='add_piece'),
     url(r'^createArtist/$', create_artist, name='create_artist'),
+    url(r'^createCollections/$', create_collection, name='create_collection'),
+
 
 ]
