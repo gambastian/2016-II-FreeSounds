@@ -1,7 +1,7 @@
 <div class="register">
     <div class="container">
 
-        <h3>Registrar Artista</h3>
+        <h3>Register Artist</h3>
 
         <div class="register-form">
             <div class="alert alert-danger" ng-if="error">
@@ -13,31 +13,31 @@
             </div>
             <form class="form-horizontal" name="formRegister" novalidate>
                 <div class="form-group">
-                    <label class="control-label" for="nombre">Nombre:</label>
+                    <label class="control-label" for="nombre">Name:</label>
                     <input type="text" id="nombre" name="nombre" class="form-control" ng-model="form.nombre"
                            ng-minlength="3" ng-maxlength="35" ng-pattern="^[a-zA-Z\\s]+$" required>
                     <div ng-messages="formRegister.nombre.$error" ng-show="formRegister.nombre.$touched">
-                        <div ng-message="required">Se debe ingresar un nombre</div>
-                        <div ng-message="minlength">El nombre debe tener al menos 3 caracteres</div>
-                        <div ng-message="maxlength">El nombre no debe exceder los 35 caracteres</div>
+                        <div ng-message="required">You must enter a name</div>
+                        <div ng-message="minlength">Name must have at least 3 characters</div>
+                        <div ng-message="maxlength">Name can't have more than 35 characters</div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="apellido">Apellido:</label>
+                    <label class="control-label" for="apellido">Last Name:</label>
                     <input type="text" id="apellido" name="apellido" class="form-control" ng-model="form.apellido"
                            ng-minlength="3" ng-maxlength="35" ng-pattern="^[a-zA-Z\\s]+$" required>
                     <div ng-messages="formRegister.apellido.$error" ng-show="formRegister.apellido.$touched">
-                        <div ng-message="required">Se debe ingresar un apellido</div>
-                        <div ng-message="minlength">El apellido debe tener al menos 3 caracteres</div>
-                        <div ng-message="maxlength">El apellido no debe exceder los 35 caracteres</div>
+                        <div ng-message="required">You must enter a Last Name</div>
+                        <div ng-message="minlength">Last Name must have at least 3 characters</div>
+                        <div ng-message="maxlength">Last Name can't have more than 35 characters</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="email">Email:</label>
                     <input type="email" id="email" name="email" class="form-control" ng-model="form.email" required>
                     <div ng-messages="formRegister.email.$error" ng-show="formRegister.email.$touched">
-                        <div ng-message="required">Debe ingresar un email</div>
-                        <div ng-message="email">El email es invalido</div>
+                        <div ng-message="required">You must enter an email</div>
+                        <div ng-message="email">Email is invalid</div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -45,19 +45,19 @@
                     <input type="text" id="username" name="username" class="form-control" ng-model="form.username"
                            ng-minlength="8" ng-maxlength="12" ng-pattern="/^\w+$/" required>
                     <div ng-messages="formRegister.username.$error" ng-show="formRegister.username.$touched">
-                        <div ng-message="required">Debe ingresar un username</div>
-                        <div ng-message="minlength">El username debe tener al menos 8 caracteres</div>
-                        <div ng-message="maxlength">El username no debe exceder los 12 caracteres</div>
+                        <div ng-message="required">You must enter an username</div>
+                        <div ng-message="minlength">Username must have at least 8 characters</div>
+                        <div ng-message="maxlength">Username can't have more than 12 characters</div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password">Contraseña:</label>
+                    <label for="password">Password:</label>
                     <input type="password" id="password" name="password" class="form-control" ng-model="form.password"
                            ng-minlength="8" ng-maxlength="20" ng-pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required>
                     <div ng-messages="formRegister.password.$error" ng-show="formRegister.password.$touched">
-                        <div ng-message="required">Debe ingresar un password</div>
-                        <div ng-message="minlength">El password debe tener al menos 8 caracteres</div>
-                        <div ng-message="maxlength">El password no debe exceder los 20 caracteres</div>
+                        <div ng-message="required">You must enter a password</div>
+                        <div ng-message="minlength">Password must have at least 8 characters</div>
+                        <div ng-message="maxlength">Password can't have more than 20 characters</div>
                     </div>
                 </div>
                 <div class="form-group">

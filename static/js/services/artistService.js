@@ -1,5 +1,6 @@
 /**
- * Created by user1 on 01/10/2016.
+ * Created by Jorge Perea on 01/10/2016.
+ * Service para las diferentes funciones definidas para el artista
  */
 (function () {
         'use strict';
