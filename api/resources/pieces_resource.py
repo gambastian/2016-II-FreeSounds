@@ -3,6 +3,9 @@ import json
 import sys
 from django.contrib.auth.models import User
 from django.core import serializers
+
+from api.models import Piece, Collection
+from django.shortcuts import get_list_or_404
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.shortcuts import get_list_or_404, get_object_or_404
@@ -20,6 +23,9 @@ def pieces_list(request):
     return HttpResponse(serializers.serialize("json", pieces_list))
 
 @csrf_exempt
+def collection_by_artist(request, artist_name):
+    collection = get_list_or_404(Collection.objects.filter(name=artist_name))
+    return HttpResponse(serializers.serialize("json", collection))
 def piece_by_id(request, piece_id):
     piece = get_list_or_404(Piece.objects.filter(pk = piece_id))
     return HttpResponse(serializers.serialize("json", piece))
@@ -74,3 +80,4 @@ def add_piece(request):
         );
         new_piece.save();
         return HttpResponse(serializers.serialize("json", [new_piece]))
+
