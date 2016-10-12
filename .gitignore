@@ -1,4 +1,2 @@
 .idea/
-api/migrations/*
 *.pyc
-*.sql
