@@ -1,12 +1,14 @@
 import json
 
+import sys
+from django.contrib.auth.models import User
 from django.core import serializers
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 
-from api.models import Piece, Category
+from api.models import Piece, Category,Artist
 
 ###########################################
 # Resource for operations with Piece class
@@ -58,3 +60,17 @@ def update_piece(request):
 
             return JsonResponse({"mensaje": "successfully updated"})
 
+@csrf_exempt
+def add_piece(request):
+    if request.method=='POST':
+        jsonPiece = json.loads(request.body)
+        new_piece=Piece(
+            name=jsonPiece['body']['name'],
+            url=jsonPiece['body']['sound'],
+            image_cover=jsonPiece['body']['cover'],
+            duration=jsonPiece['body']['duration'],
+            category=get_object_or_404(Category.objects.filter(id=jsonPiece['body']['category'])),
+            artist=Artist.objects.get(username=jsonPiece['body']['artist']),
+        );
+        new_piece.save();
+        return HttpResponse(serializers.serialize("json", [new_piece]))

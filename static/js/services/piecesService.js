@@ -39,6 +39,22 @@
                                 console.log(error);
                             });
                         return promise;
+                    },
+                    add:function (data) {
+                        var heads = {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        };
+
+                        var promise = $http.post('/api/pieces/add_piece/',{body:data}
+
+                            )
+                            .then(function (response) {
+                                return response.data;
+                            }, function (error) {
+                               return error;
+                            });
+                        return promise;
                     }
                 };
 
