@@ -10,7 +10,9 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from api.models import Artist
 
+#Resource del artista que posee las funciones relacionadas a este
 
+#Funcion que recibe la info de un artista y lo crea en BD
 @csrf_exempt
 def create_artist(request):
     if request.method == 'POST':

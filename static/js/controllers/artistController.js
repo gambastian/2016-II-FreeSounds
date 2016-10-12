@@ -1,5 +1,6 @@
 /**
- * Created by user1 on 01/10/2016.
+ * Created by Jorge Perea on 01/10/2016.
+ * Controlador que se encarga de la ejecución de las diferentes funciones y de la obtención de la respuesta
  */
 
 (function () {
