@@ -19,3 +19,7 @@ class Piece(models.Model):
     artist = models.ForeignKey(Artist, null=True, blank=True)
     lyrics = models.TextField(blank=True, null=True)
 
+class Collection(models.Model):
+    name = models.CharField(max_length=60)
+
+

@@ -1,0 +1,121 @@
+<div class="events">
+    <div class="container">
+        <div class="col-md-9 events-left">
+            <div class="eve-top">
+                <div class="col-md-5 eve-lt">
+                    <div>
+                        <img src="{{ piece.fields.image_cover }}" alt=" " class="img-responsive">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="col-md-7 container">
+                    <h4>{{ piece.fields.name }}</h4>
+                    <p><b>Duration: </b> {{ piece.fields.duration }}</p>
+                    <div>
+                        <img src="http://square-squared.com/Images/play-button1.png" alt=" " class="img-responsive"
+                             style="height: 150px">
+                    </div>
+                    <br>
+                    <br>
+                    <div>
+                        <div style="float:right;position:relative;"><h2><a href=""><span class="label label-default"
+                                                                                         ng-click="togglePieceInput()">Edit Piece</span></a></h2>
+                        </div>
+                        <div style="float:right;position:relative;">
+                            <h2 ng-if="!hasLyrics">
+                                <a href=""><span class="label label-default"
+                                                 ng-click="toggleLyricsInput()">Add lyrics</span></a>
+                            </h2>
+                            <h2 ng-if="hasLyrics">
+                                <a href=""><span class="label label-default"
+                                                 ng-click="toggleViewLyrics()">View lyrics</span></a>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Edit Piece -->
+            <div class="eve-top" ng-if="viewPieceInput">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <label ng-if="lyricsError" style="color: #ff0">
+                                    {{ lyricsErrorMessage }}
+                                </label>
+                                <label ng-if="nameError" style="color: #ff0">
+                                    {{ nameErrorMessage }}
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    Name
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" style="width: 100%" ng-model="piece.fields.name"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    Category
+                                </label>
+                            </td>
+                            <td>
+                                <select id="sel" class="input-block-level" ng-model="piece.fields.category" ng-options="obj.pk as obj.fields.name for obj in categories">
+                                </select>
+                            </td>
+                        </tr>
+                        <tr><td><label>Lyric</label></td><td><textarea rows="10" style="width: 100%" ng-model="piece.fields.lyrics"></textarea></td></tr>
+                        <tr><td>
+                            <label style="font-size: 200%" ng-click="savePiece(piece)">
+                                <a href=""><span class="label label-default">Save</span></a>
+                            </label>
+                        </td><td>
+                            <label style="font-size: 200%" ng-click="discardPiece()">
+                                <a href="">
+                                    <span class="label label-block label-default">Cancel</span>
+                                </a>
+                            </label>
+                        </td></tr>
+                    </table>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Add lyrics -->
+            <div class="eve-top" ng-if="viewLyricsInput">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <label ng-if="lyricsError" style="color: #ff0">{{ lyricsErrorMessage }}</label>
+                    <textarea rows="10" style="width: 100%" ng-model="piece.fields.lyrics"></textarea>
+                    <div style="text-align: right">
+                        <label style="font-size: 200%" ng-click="saveLyrics(piece)">
+                            <a href=""><span class="label label-default">Save</span></a>
+                        </label>
+                        <label style="font-size: 200%" ng-click="discardLyrics()">
+                            <a href="">
+                                <span class="label label-default">Cancel</span>
+                            </a>
+                        </label>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <!-- View lyrics -->
+            <div class="eve-top" ng-if="viewLyrics">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <p>{{ piece.fields.lyrics }}</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>

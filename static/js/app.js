@@ -5,7 +5,9 @@
 (function () {
     'use strict';
 
-    var freesounds = angular.module('freesounds', ['ngCookies', 'ngRoute', 'ngResource', 'ngMessages', 'freesounds.controllers', 'freesounds.services']);
+
+    var freesounds = angular.module('freesounds', ['ngCookies', 'ngRoute', 'ngResource', 'ngMessages', 'freesounds.controllers', 'freesounds.services','ngFileUpload']);
+
     var freesoundsControllers = angular.module('freesounds.controllers', []);
     var freesoundsServices = angular.module('freesounds.services', []);
 
@@ -15,9 +17,18 @@
             controller: 'PiecesCrtl'
         }).when('/about', {
             templateUrl: 'static/partials/about.html',
+        }).when('/createCollections', {
+            templateUrl: 'static/partials/createCollection.html',
+            controller: 'collectionController'
+        }).when('/collectionsList', {
+            templateUrl: 'static/partials/collectionList.html',
+            controller: 'collectionController'
         }).when('/pieces/:piece_id', {
             templateUrl: 'static/partials/pieceDetail.html',
             controller: 'PieceDetailCrtl'
+                 }).when('/addPiece', {
+            templateUrl: 'static/partials/addPiece.html',
+            controller:'AddPiecesCrtl'
         }).when('/createArtist', {
             templateUrl: 'static/partials/createArtist.html',
             controller: 'ArtistCrtl'
