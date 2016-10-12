@@ -1,0 +1,1 @@
+web: gunicorn freeSounds.wsgi:application --log-file -
