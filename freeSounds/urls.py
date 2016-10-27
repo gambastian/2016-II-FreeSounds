@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from api.views import index,logout,login,register,profile
+from api.views import index,logout,login,register,profile,add_piece,library
 
 urlpatterns = [
     url(r'^api/', include('api.urls')),
@@ -26,4 +26,6 @@ urlpatterns = [
     url(r'^login$', login, name='login'),
     url(r'^register', register,name='register'),
     url(r'^profile/(?P<id_user>\d+)$', profile, name='profile'),
+    url(r'^pieces/add_piece/(?P<id_user>\d+)$', add_piece, name='add_piece'),
+    url(r'^library/(?P<id_user>\d+)$', library, name='library'),
 ]

@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 
-from .models import Artist, ArtistaForm, UserForm
+from django.shortcuts import get_list_or_404
+from .models import Artist, ArtistaForm, UserForm,PieceForm,Category,Piece
 from django.shortcuts import render
 from django.contrib import messages
 from django.contrib import auth
@@ -68,7 +69,7 @@ def profile(request,id_user):
         if form_artist.is_valid():
             # formulario validado correctamente
             form_artist.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/profile/'+id_user)
 
     else:
         # formulario inicial
@@ -76,3 +77,32 @@ def profile(request,id_user):
 
     context = {'form_artist': form_artist, 'artista': artista, 'id_user' : id_user}
     return render(request, 'profile.html', context)
+
+def add_piece(request,id_user):
+    artista = Artist.objects.get(userId=id_user)
+    if request.method=='POST':
+        form_piece = PieceForm(request.POST, request.FILES, instance=artista)
+        if form_piece.is_valid():
+            new_piece=Piece(
+                name=request.POST['name'],
+                url=request.POST['url'],
+                image_cover=request.FILES['image_cover'],
+                duration=request.POST['duration'],
+                category=Category.objects.get(pk=request.POST.get('category')),
+                artist=artista,
+                lyrics = request.POST['lyrics'],
+            );
+            new_piece.save();
+            return HttpResponseRedirect('/')
+    else:
+        # formulario inicial
+        form_piece = PieceForm()
+
+    context = {'form_piece': form_piece, 'id_user': id_user}
+    return render(request, 'addPiece.html', context)
+
+def library(request,id_user):
+    artista = Artist.objects.get(userId=id_user)
+    pieces = get_list_or_404(Piece.objects.filter(artist=artista))
+    context = {'pieces': pieces, 'id_user': id_user}
+    return render(request, 'library.html', context)

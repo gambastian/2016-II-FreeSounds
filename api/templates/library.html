@@ -46,15 +46,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="top-menu">
                         <nav class="cl-effect-21">
                             <ul>
-                                <li><a class="active" href="#/pieces">Home</a></li>
+                                <li><a  href="/">Home</a></li>
                                 {% if user.is_authenticated %}
                                     <li><a href="{% url 'profile' id_user=user.id %}" id="id_editar"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
                                     <li>
                                         <a href="{% url 'add_piece' id_user=user.id %}"><span class="glyphicon glyphicon-music"></span> Upload Piece</a>
                                     </li>
-                                    <li><a href="{% url 'library' id_user=user.id %}" id="id_editar"><span class="glyphicon glyphicon-book"></span> My Library</a></li>
+                                    <li><a class="active" href="{% url 'library' id_user=user.id %}" id="id_editar"><span class="glyphicon glyphicon-book"></span> My Library</a></li>
                                     <li>
-                                        <a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                                        <a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
                                     </li>
                                 {% else %}
                                     <li><a href="#" id="id_register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
@@ -81,8 +81,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
 </div>
-
-<div ng-view></div>
+<div class="container">
+    <div class="row">
+        {% for piece in pieces %}
+            <div class="tp-lt">
+                <div class="top-lft">
+                    <a href="/#/pieces/{{ piece.id }}">
+                        <img src="{{ '/' }}{{ piece.image_cover }}" alt=" " class="img-responsive" style="width: 150px;height: 150px">
+                    </a>
+                </div>
+                <div class="top-rgt">
+                    <a href="/#/pieces/{{ piece.id }}"><h4>{{ piece.name }}</h4></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 
 <div class="footer">
     <div class="container">
@@ -121,51 +136,3 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="{% static "lib/angular/angular-resource.min.js" %}"></script>
 <script src="{% static "lib/angular/angular-cookies.min.js" %}"></script>
 <script src="{% static "lib/angular/angular-messages.js" %}"></script>
-<script src="{% static "js/app.js" %}"></script>
-<!-- Controllers -->
-<script src="{% static "js/controllers/piecesController.js" %}"></script>
-<script src="{% static "js/controllers/collectionController.js" %}"></script>
-<script src="{% static "js/controllers/pieceDetailController.js" %}"></script>
-<script src="{% static "js/controllers/addPieceController.js" %}"></script>
-<script src="{% static "js/controllers/artistController.js" %}"></script>
-<!-- Services -->
-<script src="{% static "js/services/S3UploadService.js" %}"></script>
-<script src="{% static "js/services/piecesService.js" %}"></script>
-<script src="{% static "js/services/collectionService.js" %}"></script>
-<!-- Other -->
-<script src="{% static "js/services/categoryService.js" %}"></script>
-<script src="{% static "js/services/artistService.js" %}"></script>
-<script src="{% static "js/csrfToken.js" %}"></script>
-<script src="https://angular-file-upload.appspot.com/js/ng-file-upload.js"></script>
-<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.48.min.js"></script>
-<script>
-    $("span.menu").click(function () {
-        $(".top-menu").slideToggle("slow", function () {
-            // Animation complete.
-        });
-    });
-</script>
-<!-- script for menu -->
-<script>
-    $(document).ready(function () {
-        var navoffeset = $(".header-bottom").offset().top;
-        $(window).scroll(function () {
-            var scrollpos = $(window).scrollTop();
-            if (scrollpos >= navoffeset) {
-                $(".header-bottom").addClass("fixed");
-            } else {
-                $(".header-bottom").removeClass("fixed");
-            }
-        });
-        $('#id_login').click(function () {
-            $('#login_modal').modal();
-        });
-        $('#id_register').click(function () {
-            $('#register_modal').modal();
-        });
-    });
-</script>
-{% include "register.html" %}
-{% include "login.html" %}
-</body>
-</html>

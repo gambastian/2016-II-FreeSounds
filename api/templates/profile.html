@@ -50,6 +50,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 {% if user.is_authenticated %}
                                     <li><a class="active" href="{% url 'profile' id_user=user.id %}" id="id_editar"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
                                     <li>
+                                        <a href="{% url 'add_piece' id_user=user.id %}"><span class="glyphicon glyphicon-music"></span> Upload Piece</a>
+                                    </li>
+                                    <li><a href="{% url 'library' id_user=user.id %}" id="id_editar"><span class="glyphicon glyphicon-book"></span> My Library</a></li>
+                                    <li>
                                         <a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
                                     </li>
                                 {% else %}
@@ -80,10 +84,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <img src="{{ artista.fields.avatar }}" alt=" " class="img-responsive">
+            <img src="{{ '/' }}{{ form_artist.instance.avatar.url }}" alt=" " class="img-responsive">
         </div>
         <div class="col-sm-6">
-            <form role="form" action="{% url 'profile' id_user=user.id %}" method="post" enctype="multipart/form-data" id="edit-form" novalidate="novalidate">
+            <form role="form" action="{% url 'profile' id_user=id_user %}" method="post" enctype="multipart/form-data" id="edit-form" novalidate="novalidate">
                 {% csrf_token %}
                 <div class="modal-body">
                     {% for field in form_artist %}
@@ -176,6 +180,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- script for menu -->
 <script>
     $(document).ready(function () {
+
         var navoffeset = $(".header-bottom").offset().top;
         $(window).scroll(function () {
             var scrollpos = $(window).scrollTop();
