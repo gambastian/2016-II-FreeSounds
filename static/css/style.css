@@ -7,7 +7,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 100%;
-	background:#1c1b17 !important;
+    background-image: url(/static/images/fondo-abstracto-negro.jpg);
+    background-size: 100% 500px;
 }
 body a,.grid_1,plan_1,plan_1.one,plan_1.two,i.icon1, i.icon2, i.icon3, i.icon4, i.icon5, i.icon6 {
 	transition:0.5s all;
