@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 100%;
-	background:#1c1b17;
+	background:#1c1b17 !important;
 }
 body a,.grid_1,plan_1,plan_1.one,plan_1.two,i.icon1, i.icon2, i.icon3, i.icon4, i.icon5, i.icon6 {
 	transition:0.5s all;
@@ -50,7 +50,7 @@ label{
   text-align: left;
 }
 .logo h1 a {
-  font-size: 4em;
+  font-size: 1.5em;
   margin-top: 0em;
   font-weight: 400;
   color: #000;
@@ -225,7 +225,7 @@ label{
   -moz-background-size: cover;
   -ms-background-size: cover;
   width: 100%;
-  min-height: 206px;
+  min-height: 130px;
   top: 0;
   position: fixed;
   z-index:1;
@@ -554,7 +554,7 @@ ul.f-icons{
   color: #837B05;
 }
 .banner-1{
-  background: url(../../../static/images/ban.jpg) no-repeat 0px 0px;
+  background: url(../../../static/images/live-sound-microphone.jpg) no-repeat 0px 0px;
   background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;

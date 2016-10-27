@@ -37,3 +37,4 @@ def create_artist(request):
             return JsonResponse({"mensaje": mensaje})
         except ValueError, error:
             return JsonResponse({"mensaje": "fallo la creacion"})
+

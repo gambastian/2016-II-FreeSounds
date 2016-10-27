@@ -9,6 +9,7 @@ from api.resources.pieces_resource import pieces_list, piece_by_id, update_piece
 from api.resources.category_resource import category_list
 from api.resources.awsS3_resource import getCredentials
 from api.resources.artist_resource import create_artist
+from . import views
 
 urlpatterns=[
     url(r'^pieces/$', pieces_list, name='pieces_list'),
@@ -19,6 +20,7 @@ urlpatterns=[
     url(r'^pieces/add_piece/$', add_piece, name='add_piece'),
     url(r'^createArtist/$', create_artist, name='create_artist'),
     url(r'^createCollections/$', create_collection, name='create_collection'),
-
+    url(r'^login$', views.login),
+    url(r'^register', views.register),
 
 ]

@@ -16,10 +16,14 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from api.views import index
+from api.views import index,logout,login,register,profile
 
 urlpatterns = [
     url(r'^api/', include('api.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='index'),
+    url(r'^logout$', logout, name='logout'),
+    url(r'^login$', login, name='login'),
+    url(r'^register', register,name='register'),
+    url(r'^profile/(?P<id_user>\d+)$', profile, name='profile'),
 ]
